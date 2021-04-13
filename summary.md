@@ -139,14 +139,12 @@ def f(ham: str, eggs: str='eggs') -> str:
 
 ## 5. 数据结构
 
-方法签名中 i 两边的方括号表示该参数是可选的
-
 - 列表详解
 
 ```py
 l.append(x), l.extend(iterable)==a[len(a):] = iterable, l.insert(n,x),
 l.remove(x), l.pop([i]), l.clear()==del a[:],
-l.index(x[,start[,end]]), l.count(x), l.sort(*, key=None, reverse=False),
+l.index(x[,start[,end]]), l.count(x), l.sort(*, key=None, reverse=False)
 l.reverse(), l.copy()
 
 q = deque(["Eric", "John", "Michael"])
@@ -154,6 +152,9 @@ q.appendleft("Tom")
 q.append
 q.pop
 q.poplef
+```
+
+```py
 列表推导： [重要]
 squares = list(map(lambda x: x**2, range(10)))
 squares = [x**2 for x in range(10)]
@@ -187,9 +188,12 @@ b = set('alacazam')
 a = {x for x in 'abracadabra' if x not in 'abc'}
 
 - 字典
+
+```py
 dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
 {x: x**2 for x in (2, 4, 6)}  # 字典推导
 dict(sape=4139, guido=4127, jack=4098)
+```
 
 - 循环技巧
 items:  for k, v in knights.items():
@@ -203,6 +207,8 @@ raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
 [ x for x in raw_data if not math.isnan(x) ]  # for 循环也可以实现
 
 - 深入条件控制
+
+ ```sh
 while 和 if 使用
 "in" and "not in"  # 校验序列里是否存在某个值
 "is" and "is not"  # 比较两个对象是否为同一个对象
@@ -211,6 +217,7 @@ a < b == c 校验 a 是否小于 b，且 b 是否等于
 "not" "and" "or"  # 优先级排序
 while chunk := fp.read(200):  # Python 与 C 不同，在表达式内部赋值必须显式使用 海象运算符 :=
     print(chunk)              # 这避免了 C 程序中常见的问题：要在表达式中写 == 时，却写成了 =
+```
 
 - 序列和其他类型比较
 
@@ -247,7 +254,7 @@ import builtins; dir(builtins) #  查看内置函数变量、模块、函数等
 10. % print('The value of pi is approximately %5.3f.' % math.pi)
 11. 读取文件
   with open('workfile') as f:
-...     read_data = f.read()
+        read_data = f.read()
 
 12. 文件对象方法
     - f.read(size)
